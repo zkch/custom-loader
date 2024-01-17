@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <el-input v-model="input" placeholder="请输入内容"></el-input>
+    <input v-model="input2" placeholder="请输入内容" />
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -10,10 +12,16 @@ import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      input: '',
+      input2: '',
+    }
+  },
   components: {
-    HelloWorld
-  }
-}
+    HelloWorld,
+  },
+};
 </script>
 
 <style>
