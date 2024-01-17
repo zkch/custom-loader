@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <el-input v-model="input" placeholder="请输入内容"></el-input>
-    <input v-model="input2" placeholder="请输入内容" />
+    <el-input v-model="input" placeholder="please input"></el-input>
+    <input v-model="input2" placeholder="please input" />
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>

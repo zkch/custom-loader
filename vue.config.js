@@ -3,19 +3,7 @@ const path = require('path')
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  configureWebpack: {
-    resolveLoader: {
-      modules: ['node_modules', './loaders']
-    }
-  },
   chainWebpack: config => {
-    // config.module
-    //   .rule('vue')
-    //   .test(/\.vue$/)
-    //   .use('txt-loader')
-    //     .loader('txt-loader')
-    //     .end()
-
    
     config.module
       .rule('vue')
