@@ -1,7 +1,9 @@
 module.exports = function (content) {
   const templateMatch = content.match(/<template>([\s\S]*?)<\/template>/);
+  let restContent = content
   if (templateMatch) {
     const templateContent = templateMatch[1];
+    restContent = content.replace(/<template>[\s\S]*?<\/template>/, '');
     
     let returnContent = templateContent.replace(/<\/el-/g, '\n</el-')
     returnContent = returnContent.replace(/<el-/g, '\n<el-')
@@ -17,8 +19,14 @@ module.exports = function (content) {
     })
     const result = resultArr.join('\n')
     console.log('result', result)
-    return result
+    // return result
+    return `module.exports = ${JSON.stringify(result + restContent)};`
+    // this.callback(null, result)
+    // return
   } else {
-    return content;
+    // return content;
+    return `module.exports = ${JSON.stringify(content)};`
+    // this.callback(null, content)
+    // return
   }
 }

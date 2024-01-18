@@ -1,5 +1,6 @@
 const { defineConfig } = require('@vue/cli-service')
 const path = require('path')
+// const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = defineConfig({
   transpileDependencies: true,
@@ -7,7 +8,7 @@ module.exports = defineConfig({
    
     config.module
       .rule('vue')
-      .test(/\.vue$/)
+      // .test(/\.vue$/)
       .use('vue-loader')
       .loader('vue-loader')
       .end()
@@ -15,5 +16,6 @@ module.exports = defineConfig({
       .loader(path.resolve(__dirname, './my-loader.js'))
       // .before('vue-loader')
       .end()
+
   }
 })
